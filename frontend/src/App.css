@@ -1,0 +1,141 @@
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif; /* Refined font family */
+  background-color: #121212; /* Dark grey background */
+  color: #f0f0f0; /* Light grey text for better readability on dark background */
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  padding: 60px; /* Increased root padding */
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.banner {
+  background-color: #222; /* Darker background for banner */
+  color: #f0f0f0; /* Light text color for banner */
+  padding: 250px 30px; /* Increased horizontal padding in banner */
+  text-align: left;
+  border-radius: 40px; /* Even more rounded banner corners */
+  margin-bottom: 100px; /* Increased banner margin */
+  box-shadow: 0 18px 45px rgba(255, 255, 255, 0.18); /* Light shadow for banner to stand out on dark background */
+  position: relative;
+  overflow: hidden;
+}
+
+.banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; /* Overlay starting from full left */
+  background: linear-gradient(
+    135deg,
+    #e91e63 -20%,
+    #9c27b0 80%
+  ); /* Further adjusted gradient */
+  transform: skewX(0deg);
+  transform-origin: top right;
+  z-index: 0;
+  opacity: 0.7;
+}
+
+.banner-content {
+  position: relative;
+  z-index: 1;
+  padding: 0 70px; /* Increased banner content padding */
+}
+
+.banner h1 {
+  font-size: 6.5em; /* Even larger banner title */
+  font-weight: 900;
+  margin-bottom: 30px;
+  color: #fff; /* White color for banner title */
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); /* Stronger text shadow for better visibility on dark background */
+  letter-spacing: 1px;
+}
+
+.banner p {
+  font-size: 2em; /* Further increased banner paragraph size */
+  opacity: 0.9;
+  max-width: 1100px; /* Even wider banner paragraph */
+  line-height: 2.5; /* Further increased line height */
+  color: #ddd; /* Lighter color for banner paragraph */
+  font-weight: 400; /* Slightly lighter paragraph font weight */
+}
+
+.product-list,
+.tech-advantages,
+.register {
+  position: relative;
+  z-index: 1;
+  background-color: #222; /* Darker background for product list and tech advantages sections */
+  padding: 120px; /* Further increased section padding */
+  border-radius: 50px; /* Even more rounded corners */
+  box-shadow: 0 25px 60px rgba(255, 255, 255, 0.22); /* Light shadow for sections to stand out on dark background */
+  margin-bottom: 120px; /* Increased section margin */
+}
+
+.product-list h2,
+.tech-advantages h2 {
+  font-size: 5.5em; /* Even larger section heading */
+  color: #f777b3; /* Brighter pink for section headings */
+  margin-bottom: 90px;
+  text-align: left;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 4px; /* Increased letter spacing */
+}
+
+.grid {
+  display: grid;
+  gap: 100px; /* Increased grid gap */
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.md\:grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.lg\:grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.product-item,
+.advantage-card {
+  background-color: #333; /* Even darker background for product items and advantage cards */
+  padding: 90px; /* Further increased card padding */
+  border-radius: 50px; /* Even more rounded corners for cards */
+  border: 1px solid #555; /* Darker border for cards */
+  box-shadow: 0 16px 40px rgba(255, 255, 255, 0.18); /* Light shadow for cards to stand out on dark background */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.product-item:hover,
+.advantage-card:hover {
+  transform: translateY(-30px); /* Even more pronounced hover effect */
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.35); /* Stronger shadow on card hover */
+}
+
+.advantage-card h3 {
+  font-size: 4.5em; /* Even larger card heading */
+  color: #d87093; /* Brighter purple for card headings */
+  margin-bottom: 60px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 3px; /* Increased letter spacing */
+}
+
+.advantage-card p {
+  color: #ddd; /* Lighter color for card text */
+  line-height: 2.6; /* Further increased line height */
+  font-size: 1.7em; /* Slightly larger card text */
+  font-weight: 400;
+}
