@@ -4,7 +4,6 @@ import { useEffect, useId, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import { cn } from "../lib/utils";
-import React from 'react';
 import type { MoveDirection, OutMode, AnimationMode, StartValueType } from "@tsparticles/engine";
 
 type SparklesBackgroundProps = {
@@ -53,7 +52,7 @@ export function SparklesBackground({
     const defaultOptions = {
         background: {
             color: {
-                value: "transparent",
+                value: background,
             },
         },
         fullScreen: {
@@ -63,7 +62,7 @@ export function SparklesBackground({
         fpsLimit: 30,
         particles: {
             color: {
-                value: "#ffffff",
+                value: color,
             },
             move: {
                 enable: true,
@@ -83,7 +82,7 @@ export function SparklesBackground({
                     width: 400,
                     height: 400,
                 },
-                value: 100,
+                value: density,
             },
             opacity: {
                 value: {
