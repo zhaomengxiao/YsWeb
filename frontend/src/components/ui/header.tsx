@@ -64,13 +64,13 @@ function Header1() {
     const [isOpen, setOpen] = useState(false)
     return (
         <header className="w-full z-40 fixed top-0 left-0 bg-[#121212] border-b border-[#333] shadow-lg backdrop-blur-sm bg-opacity-90">
-            <div className="container relative mx-auto min-h-24 flex gap-6 flex-row lg:grid lg:grid-cols-3 items-center px-6">
+            <div className="container relative mx-auto min-h-16 sm:min-h-20 lg:min-h-24 flex gap-3 sm:gap-4 lg:gap-6 flex-row lg:grid lg:grid-cols-3 items-center px-4 sm:px-6">
                 <div className="justify-start items-center gap-6 lg:flex hidden flex-row">
                     <NavigationMenu className="flex justify-start items-start">
                         <NavigationMenuList className="flex justify-start gap-6 flex-row">
                             {navigationItems.map((item) => (
                                 <NavigationMenuItem key={item.title}>
-                                    <NavigationMenuTrigger className="font-medium text-lg px-6 py-3 bg-[#1a1a1a] hover:bg-[#2a2a2a] text-[#f0f0f0] hover:text-[#e91e63] transition-all data-[state=open]:bg-[#2a2a2a] data-[state=open]:text-[#e91e63] rounded-lg">
+                                    <NavigationMenuTrigger className="font-medium text-base lg:text-lg px-4 lg:px-6 py-2 lg:py-3 bg-[#1a1a1a] hover:bg-[#2a2a2a] text-[#f0f0f0] hover:text-[#e91e63] transition-all data-[state=open]:bg-[#2a2a2a] data-[state=open]:text-[#e91e63] rounded-lg">
                                         {item.title}
                                     </NavigationMenuTrigger>
                                     <NavigationMenuContent className="!w-[450px] p-6 bg-[#1a1a1a] border border-[#333]">
@@ -101,37 +101,37 @@ function Header1() {
                     </NavigationMenu>
                 </div>
                 <div className="flex lg:justify-center">
-                    <p className="font-bold text-2xl bg-gradient-to-r from-[#e91e63] to-[#9c27b0] text-transparent bg-clip-text">央山医疗</p>
+                    <p className="font-bold text-lg sm:text-xl lg:text-2xl bg-gradient-to-r from-[#e91e63] to-[#9c27b0] text-transparent bg-clip-text">央山医疗</p>
                 </div>
-                <div className="flex justify-end w-full gap-6">
-                    <Button className="text-lg px-6 py-3 bg-[#1a1a1a] hover:bg-[#2a2a2a] text-[#f0f0f0] hover:text-[#e91e63] transition-all rounded-lg border border-[#333] hover:border-[#e91e63]">
+                <div className="flex justify-end w-full gap-2 sm:gap-3 lg:gap-6">
+                    <Button className="text-sm sm:text-base lg:text-lg px-3 sm:px-4 lg:px-6 py-2 lg:py-3 bg-[#1a1a1a] hover:bg-[#2a2a2a] text-[#f0f0f0] hover:text-[#e91e63] transition-all rounded-lg border border-[#333] hover:border-[#e91e63]">
                         登录
                     </Button>
-                    <Button className="text-lg px-6 py-3 bg-gradient-to-r from-[#e91e63] to-[#9c27b0] hover:opacity-90 transition-opacity text-[#f0f0f0] rounded-lg">
+                    <Button className="text-sm sm:text-base lg:text-lg px-3 sm:px-4 lg:px-6 py-2 lg:py-3 bg-gradient-to-r from-[#e91e63] to-[#9c27b0] hover:opacity-90 transition-opacity text-[#f0f0f0] rounded-lg">
                         预约演示
                     </Button>
                 </div>
-                <div className="flex w-12 shrink lg:hidden items-end justify-end">
+                <div className="flex w-10 sm:w-12 shrink lg:hidden items-end justify-end">
                     <Button variant="ghost" onClick={() => setOpen(!isOpen)} className="hover:bg-[#222] transition-colors text-[#f0f0f0]">
-                        {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                        {isOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
                     </Button>
                     {isOpen && (
-                        <div className="absolute top-24 border-t border-[#333] flex flex-col w-full right-0 bg-[#121212] shadow-lg py-6 container gap-8">
+                        <div className="absolute top-16 sm:top-20 lg:top-24 border-t border-[#333] flex flex-col w-full right-0 bg-[#121212] shadow-lg py-4 sm:py-6 container gap-6 sm:gap-8">
                             {navigationItems.map((item) => (
                                 <div key={item.title} className="px-4">
-                                    <div className="flex flex-col gap-4">
-                                        <p className="text-xl font-semibold text-[#e91e63]">{item.title}</p>
+                                    <div className="flex flex-col gap-3 sm:gap-4">
+                                        <p className="text-lg sm:text-xl font-semibold text-[#e91e63]">{item.title}</p>
                                         {item.items &&
                                             item.items.map((subItem) => (
                                                 <Link
                                                     key={subItem.title}
                                                     to={subItem.href}
-                                                    className="flex justify-between items-center hover:bg-[#222] p-4 rounded-lg transition-colors group"
+                                                    className="flex justify-between items-center hover:bg-[#222] p-3 sm:p-4 rounded-lg transition-colors group"
                                                 >
-                                                    <span className="text-lg text-[#f0f0f0] group-hover:text-[#e91e63] transition-colors">
+                                                    <span className="text-base sm:text-lg text-[#f0f0f0] group-hover:text-[#e91e63] transition-colors">
                                                         {subItem.title}
                                                     </span>
-                                                    <MoveRight className="w-5 h-5 text-[#666] group-hover:text-[#e91e63] transition-colors" />
+                                                    <MoveRight className="w-4 h-4 sm:w-5 sm:h-5 text-[#666] group-hover:text-[#e91e63] transition-colors" />
                                                 </Link>
                                             ))}
                                     </div>

@@ -1,141 +1,109 @@
 body {
-  font-family: "Helvetica Neue", Arial, sans-serif; /* Refined font family */
-  background-color: #121212; /* Dark grey background */
-  color: #f0f0f0; /* Light grey text for better readability on dark background */
-  margin: 0;
-  padding: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  @apply bg-[#121212] text-[#f0f0f0] m-0 p-0 antialiased;
 }
 
 #root {
-  padding: 60px; /* Increased root padding */
-  max-width: 1600px;
-  margin: 0 auto;
+  @apply px-5 sm:px-8 md:px-12 lg:px-16 xl:px-[60px] 
+         max-w-full lg:max-w-[1400px] xl:max-w-[1600px] 
+         mx-auto;
 }
 
 .banner {
-  background-color: #222; /* Darker background for banner */
-  color: #f0f0f0; /* Light text color for banner */
-  padding: 250px 30px; /* Increased horizontal padding in banner */
-  text-align: left;
-  border-radius: 40px; /* Even more rounded banner corners */
-  margin-bottom: 100px; /* Increased banner margin */
-  box-shadow: 0 18px 45px rgba(255, 255, 255, 0.18); /* Light shadow for banner to stand out on dark background */
-  position: relative;
-  overflow: hidden;
+  @apply bg-[#222] text-[#f0f0f0]
+         pt-32 sm:pt-36 md:pt-40 lg:pt-44 xl:pt-48 /* 增加顶部padding为header留出空间 */
+         px-4 sm:px-8 md:px-12 lg:px-16 xl:px-[30px]
+         pb-8 sm:pb-12 md:pb-16 lg:pb-24 xl:pb-[250px]
+         text-left
+         rounded-2xl sm:rounded-3xl lg:rounded-[40px]
+         mb-8 sm:mb-12 md:mb-16 lg:mb-24 xl:mb-[100px]
+         shadow-[0_18px_45px_rgba(255,255,255,0.18)]
+         relative overflow-hidden;
 }
 
 .banner::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0; /* Overlay starting from full left */
-  background: linear-gradient(
-    135deg,
-    #e91e63 -20%,
-    #9c27b0 80%
-  ); /* Further adjusted gradient */
-  transform: skewX(0deg);
-  transform-origin: top right;
-  z-index: 0;
-  opacity: 0.7;
+  @apply content-['']
+         absolute inset-0
+         bg-gradient-to-tr from-[#e91e63] from-[-20%] to-[#9c27b0] to-[80%]
+         opacity-70
+         transform skew-x-0 origin-top-right
+         z-0;
 }
 
 .banner-content {
-  position: relative;
-  z-index: 1;
-  padding: 0 70px; /* Increased banner content padding */
+  @apply relative z-[1]
+         px-4 sm:px-8 md:px-12 lg:px-16 xl:px-[70px];
 }
 
 .banner h1 {
-  font-size: 6.5em; /* Even larger banner title */
-  font-weight: 900;
-  margin-bottom: 30px;
-  color: #fff; /* White color for banner title */
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); /* Stronger text shadow for better visibility on dark background */
-  letter-spacing: 1px;
+  @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[6.5em]
+         font-black
+         mb-4 sm:mb-6 md:mb-8 lg:mb-[30px]
+         text-white
+         drop-shadow-lg
+         tracking-wide;
 }
 
 .banner p {
-  font-size: 2em; /* Further increased banner paragraph size */
-  opacity: 0.9;
-  max-width: 1100px; /* Even wider banner paragraph */
-  line-height: 2.5; /* Further increased line height */
-  color: #ddd; /* Lighter color for banner paragraph */
-  font-weight: 400; /* Slightly lighter paragraph font weight */
+  @apply text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-[2em]
+         opacity-90
+         max-w-full lg:max-w-[900px] xl:max-w-[1100px]
+         leading-relaxed sm:leading-[2] md:leading-[2.2] lg:leading-[2.5]
+         text-[#ddd]
+         font-normal;
 }
 
 .product-list,
 .tech-advantages,
 .register {
-  position: relative;
-  z-index: 1;
-  background-color: #222; /* Darker background for product list and tech advantages sections */
-  padding: 120px; /* Further increased section padding */
-  border-radius: 50px; /* Even more rounded corners */
-  box-shadow: 0 25px 60px rgba(255, 255, 255, 0.22); /* Light shadow for sections to stand out on dark background */
-  margin-bottom: 120px; /* Increased section margin */
+  @apply relative z-[1]
+         bg-[#222]
+         p-8 sm:p-12 md:p-16 lg:p-24 xl:p-[120px]
+         rounded-2xl sm:rounded-3xl lg:rounded-[50px]
+         shadow-[0_25px_60px_rgba(255,255,255,0.22)]
+         mb-8 sm:mb-12 md:mb-16 lg:mb-24 xl:mb-[120px];
 }
 
 .product-list h2,
 .tech-advantages h2 {
-  font-size: 5.5em; /* Even larger section heading */
-  color: #f777b3; /* Brighter pink for section headings */
-  margin-bottom: 90px;
-  text-align: left;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 4px; /* Increased letter spacing */
+  @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[5.5em]
+         text-[#f777b3]
+         mb-6 sm:mb-8 md:mb-12 lg:mb-16 xl:mb-[90px]
+         text-left
+         font-black
+         uppercase
+         tracking-wider xl:tracking-[4px];
 }
 
-.grid {
-  display: grid;
-  gap: 100px; /* Increased grid gap */
-}
-
-.grid-cols-1 {
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-}
-
-.md\:grid-cols-2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.lg\:grid-cols-3 {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+.grid-container {
+  @apply grid
+         gap-6 sm:gap-8 md:gap-12 lg:gap-16 xl:gap-[100px];
 }
 
 .product-item,
 .advantage-card {
-  background-color: #333; /* Even darker background for product items and advantage cards */
-  padding: 90px; /* Further increased card padding */
-  border-radius: 50px; /* Even more rounded corners for cards */
-  border: 1px solid #555; /* Darker border for cards */
-  box-shadow: 0 16px 40px rgba(255, 255, 255, 0.18); /* Light shadow for cards to stand out on dark background */
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.product-item:hover,
-.advantage-card:hover {
-  transform: translateY(-30px); /* Even more pronounced hover effect */
-  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.35); /* Stronger shadow on card hover */
+  @apply bg-[#333]
+         p-6 sm:p-8 md:p-12 lg:p-16 xl:p-[90px]
+         rounded-2xl sm:rounded-3xl lg:rounded-[50px]
+         border border-[#555]
+         shadow-[0_16px_40px_rgba(255,255,255,0.18)]
+         transition-all duration-300
+         hover:translate-y-0 sm:hover:-translate-y-4 md:hover:-translate-y-6 lg:hover:-translate-y-8
+         hover:shadow-[0_30px_70px_rgba(0,0,0,0.35)];
 }
 
 .advantage-card h3 {
-  font-size: 4.5em; /* Even larger card heading */
-  color: #d87093; /* Brighter purple for card headings */
-  margin-bottom: 60px;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 3px; /* Increased letter spacing */
+  @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[4.5em]
+         text-[#d87093]
+         mb-4 sm:mb-6 md:mb-8 lg:mb-12 xl:mb-[60px]
+         font-black
+         uppercase
+         tracking-wider xl:tracking-[3px];
 }
 
 .advantage-card p {
-  color: #ddd; /* Lighter color for card text */
-  line-height: 2.6; /* Further increased line height */
-  font-size: 1.7em; /* Slightly larger card text */
-  font-weight: 400;
+  @apply text-[#ddd]
+         leading-relaxed sm:leading-[2] md:leading-[2.2] lg:leading-[2.6]
+         text-base sm:text-lg md:text-xl lg:text-2xl xl:text-[1.7em]
+         font-normal;
 }
